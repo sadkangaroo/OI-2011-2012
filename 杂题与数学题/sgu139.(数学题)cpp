@@ -1,0 +1,32 @@
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<cmath>
+#include<algorithm>
+
+using namespace std;
+
+int a[20], s1, s2;
+
+int main() {
+
+    for (int i = 1; i <= 4; ++i) 
+        for (int j = 1; j <= 4; ++j) {
+            scanf("%d", &a[(i - 1) * 4 + j]);
+            if (a[(i - 1) * 4 + j] == 0) {
+                s1 = (i + j) % 2;
+            }
+        }
+    s2 = 0;
+    for (int i = 1; i <= 15; ++i)
+        for (int j = i + 1; j <= 16; ++j)
+            if (a[i] > a[j]) s2++;
+    s2 = abs(s2 - 1) % 2;
+    
+    if (s1 == s2) printf("YES\n");
+        else printf("NO\n");
+    
+    return (0-0);
+
+}
